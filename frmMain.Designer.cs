@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.txt_Des = new System.Windows.Forms.TextBox();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.lbl_Morteza = new System.Windows.Forms.Label();
             this.lbl_Des = new System.Windows.Forms.Label();
             this.btn_Capture = new System.Windows.Forms.Button();
             this.rtb_Log = new System.Windows.Forms.RichTextBox();
+            this.btn_SaveLog = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_Des
@@ -75,7 +77,7 @@
             // 
             // btn_Capture
             // 
-            this.btn_Capture.Location = new System.Drawing.Point(219, 204);
+            this.btn_Capture.Location = new System.Drawing.Point(162, 203);
             this.btn_Capture.Name = "btn_Capture";
             this.btn_Capture.Size = new System.Drawing.Size(301, 33);
             this.btn_Capture.TabIndex = 3;
@@ -91,20 +93,36 @@
             this.rtb_Log.TabIndex = 4;
             this.rtb_Log.Text = "";
             // 
+            // btn_SaveLog
+            // 
+            this.btn_SaveLog.Location = new System.Drawing.Point(469, 203);
+            this.btn_SaveLog.Name = "btn_SaveLog";
+            this.btn_SaveLog.Size = new System.Drawing.Size(115, 33);
+            this.btn_SaveLog.TabIndex = 3;
+            this.btn_SaveLog.Text = "Save Log";
+            this.btn_SaveLog.UseVisualStyleBackColor = true;
+            this.btn_SaveLog.Click += new System.EventHandler(this.btn_Capture_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 634);
             this.Controls.Add(this.rtb_Log);
+            this.Controls.Add(this.btn_SaveLog);
             this.Controls.Add(this.btn_Capture);
             this.Controls.Add(this.lbl_Des);
             this.Controls.Add(this.lbl_Morteza);
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.txt_Des);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(809, 673);
+            this.MinimumSize = new System.Drawing.Size(809, 673);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WeSLL";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
@@ -120,6 +138,7 @@
         private System.Windows.Forms.Label lbl_Des;
         private System.Windows.Forms.Button btn_Capture;
         private System.Windows.Forms.RichTextBox rtb_Log;
+        private System.Windows.Forms.Button btn_SaveLog;
     }
 }
 
