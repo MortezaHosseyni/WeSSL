@@ -28,37 +28,45 @@ namespace WeSLL
 
         private void btn_Capture_Click(object sender, EventArgs e)
         {
-            if (txt_Des.Text == "") { MessageBox.Show("Enter value"); return; }
+            if (txt_Des.Text == "") { MessageBox.Show("Check empty fields!", "WeSSL"); return; }
             rtb_Log.Text = "";
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(txt_Des.Text);
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            response.Close();
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(txt_Des.Text);
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                response.Close();
 
-            X509Certificate cert = request.ServicePoint.Certificate;
+                X509Certificate cert = request.ServicePoint.Certificate;
 
-            //convert the X509Certificate to an X509Certificate2 object by passing it into the constructor
-            X509Certificate2 cert2 = new X509Certificate2(cert);
+                //convert the X509Certificate to an X509Certificate2 object by passing it into the constructor
+                X509Certificate2 cert2 = new X509Certificate2(cert);
 
-            string cin = cert2.GetIssuerName();
-            string cn = cert2.GetName();
+                string cin = cert2.GetIssuerName();
+                string cn = cert2.GetName();
 
-            string cgdate = cert2.GetEffectiveDateString();
-            string cedate = cert2.GetExpirationDateString();
+                string cgdate = cert2.GetEffectiveDateString();
+                string cedate = cert2.GetExpirationDateString();
 
-            string cka = cert2.GetKeyAlgorithm();
-            string ckap = cert2.GetKeyAlgorithmParametersString();
+                string cka = cert2.GetKeyAlgorithm();
+                string ckap = cert2.GetKeyAlgorithmParametersString();
 
-            var cPubKeyEncryptKey = cert2.GetPublicKeyString();
+                var cPubKeyEncryptKey = cert2.GetPublicKeyString();
 
-            // Public Key Decrypt
+                // Public Key Decrypt
 
 
-            rtb_Log.Text = $"========= Name =========\nName: {cn}\n{cin}\n\n" +
-                $" ========= Date =========\n Effective date: {cgdate}\n Expire date: {cedate}\n\n" +
-                $" ========= Key Algorithm =========\nKey Algorithm: {cka}\nAlgorithm Parameters: {ckap}\n\n" +
-                $" ========= Encrypted Public Key =========\n {cPubKeyEncryptKey}\n\n" +
-                $" ========= Decrypted Public Key =========\n {0}\n\n";
+                rtb_Log.Text = $"========= Name =========\nName: {cn}\n{cin}\n\n" +
+                    $"========= Date =========\n Effective date: {cgdate}\n Expire date: {cedate}\n\n" +
+                    $"========= Key Algorithm =========\nKey Algorithm: {cka}\nAlgorithm Parameters: {ckap}\n\n" +
+                    $"========= Encrypted Public Key =========\n {cPubKeyEncryptKey}\n\n" +
+                    $"========= Decrypted Public Key =========\n {0}\n\n";
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"{err.Message}", "WeSSL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }
