@@ -38,7 +38,7 @@
             // 
             // txt_Des
             // 
-            this.txt_Des.Location = new System.Drawing.Point(144, 129);
+            this.txt_Des.Location = new System.Drawing.Point(269, 129);
             this.txt_Des.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt_Des.Name = "txt_Des";
             this.txt_Des.Size = new System.Drawing.Size(315, 29);
@@ -48,7 +48,7 @@
             // 
             this.lbl_Title.AutoSize = true;
             this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lbl_Title.Location = new System.Drawing.Point(190, 28);
+            this.lbl_Title.Location = new System.Drawing.Point(315, 28);
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.Size = new System.Drawing.Size(105, 31);
             this.lbl_Title.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             this.lbl_Morteza.AutoSize = true;
             this.lbl_Morteza.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lbl_Morteza.Location = new System.Drawing.Point(243, 59);
+            this.lbl_Morteza.Location = new System.Drawing.Point(368, 59);
             this.lbl_Morteza.Name = "lbl_Morteza";
             this.lbl_Morteza.Size = new System.Drawing.Size(125, 18);
             this.lbl_Morteza.TabIndex = 1;
@@ -67,7 +67,7 @@
             // lbl_Des
             // 
             this.lbl_Des.AutoSize = true;
-            this.lbl_Des.Location = new System.Drawing.Point(33, 132);
+            this.lbl_Des.Location = new System.Drawing.Point(158, 132);
             this.lbl_Des.Name = "lbl_Des";
             this.lbl_Des.Size = new System.Drawing.Size(102, 24);
             this.lbl_Des.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             // btn_Capture
             // 
-            this.btn_Capture.Location = new System.Drawing.Point(94, 204);
+            this.btn_Capture.Location = new System.Drawing.Point(219, 204);
             this.btn_Capture.Name = "btn_Capture";
             this.btn_Capture.Size = new System.Drawing.Size(301, 33);
             this.btn_Capture.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             this.rtb_Log.Location = new System.Drawing.Point(12, 272);
             this.rtb_Log.Name = "rtb_Log";
-            this.rtb_Log.Size = new System.Drawing.Size(496, 203);
+            this.rtb_Log.Size = new System.Drawing.Size(769, 350);
             this.rtb_Log.TabIndex = 4;
             this.rtb_Log.Text = "";
             // 
@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 487);
+            this.ClientSize = new System.Drawing.Size(793, 634);
             this.Controls.Add(this.rtb_Log);
             this.Controls.Add(this.btn_Capture);
             this.Controls.Add(this.lbl_Des);

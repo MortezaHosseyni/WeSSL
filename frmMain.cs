@@ -40,14 +40,25 @@ namespace WeSLL
             //convert the X509Certificate to an X509Certificate2 object by passing it into the constructor
             X509Certificate2 cert2 = new X509Certificate2(cert);
 
-            string cn = cert2.GetIssuerName();
-            string cedate = cert2.GetExpirationDateString();
-            string cpub = cert2.GetPublicKeyString();
-            string c = cert2.GetRawCertData().ToString();
+            string cin = cert2.GetIssuerName();
+            string cn = cert2.GetName();
 
-            //display the cert dialog box
-            //X509Certificate2UI.DisplayCertificate(cert2);
-            rtb_Log.Text = $"{c}";
+            string cgdate = cert2.GetEffectiveDateString();
+            string cedate = cert2.GetExpirationDateString();
+
+            string cka = cert2.GetKeyAlgorithm();
+            string ckap = cert2.GetKeyAlgorithmParametersString();
+
+            var cPubKeyEncryptKey = cert2.GetPublicKeyString();
+
+            // Public Key Decrypt
+
+
+            rtb_Log.Text = $"========= Name =========\nName: {cn}\n{cin}\n\n" +
+                $" ========= Date =========\n Effective date: {cgdate}\n Expire date: {cedate}\n\n" +
+                $" ========= Key Algorithm =========\nKey Algorithm: {cka}\nAlgorithm Parameters: {ckap}\n\n" +
+                $" ========= Encrypted Public Key =========\n {cPubKeyEncryptKey}\n\n" +
+                $" ========= Decrypted Public Key =========\n {0}\n\n";
         }
     }
 }
