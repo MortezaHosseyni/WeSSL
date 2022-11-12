@@ -68,5 +68,26 @@ namespace WeSLL
             }
             
         }
+
+        private void btn_SaveLog_Click(object sender, EventArgs e)
+        {
+            if (rtb_Log.Text == "") { MessageBox.Show("Logs is empty!", "WeSSL"); return; }
+            try
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Title = "Save WeSSL Log";
+                sfd.Filter = "Text File | *.txt";
+                sfd.FileName = "WeSSL_Log.txt";
+                sfd.ShowDialog();
+
+                rtb_Log.SaveFile(sfd.FileName, RichTextBoxStreamType.PlainText);
+
+                MessageBox.Show("Logs saved!", "WeSSL");
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"{err.Message}", "WeSSL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

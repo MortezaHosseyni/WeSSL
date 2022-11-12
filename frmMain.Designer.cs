@@ -101,7 +101,7 @@
             this.btn_SaveLog.TabIndex = 3;
             this.btn_SaveLog.Text = "Save Log";
             this.btn_SaveLog.UseVisualStyleBackColor = true;
-            this.btn_SaveLog.Click += new System.EventHandler(this.btn_Capture_Click);
+            this.btn_SaveLog.Click += new System.EventHandler(this.btn_SaveLog_Click);
             // 
             // frmMain
             // 
